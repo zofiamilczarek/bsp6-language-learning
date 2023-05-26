@@ -64,18 +64,3 @@ if st.session_state.generate_text:
     if regenerate_button:
         submit_button = True
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
