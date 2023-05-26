@@ -252,4 +252,3 @@ dependencies:
       - tornado==6.3.2
       - tzlocal==5.0.1
       - validators==0.20.0
-prefix: /opt/homebrew/anaconda3/envs/bsp6
