@@ -1,8 +1,10 @@
 
-from nltk import pos_tag, word_tokenize, sent_tokenize
+from nltk import pos_tag, word_tokenize, sent_tokenize, download
 import spacy
 import numpy as np
 import textstat
+
+download('punkt')
 
 nlp = spacy.load('en_core_web_sm', disable=['ner'])
 
