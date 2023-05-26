@@ -5,7 +5,7 @@ import pickle as pkl
 from level_prediction.utils.preprocess import Preprocessing as prep
 from level_prediction.utils.features import get_text_features
 from text_recommender.text_recommender import recommend_text
-
+import os
 import pickle
 
 def handle_markdown_special_chars(text):
@@ -34,7 +34,10 @@ def display_recommendation():
 
 st.title('Let\'s learn English!')
 st.markdown('This is a tool that will help you find the right text for your level of English. \nJust enter your text and we will recommend you a text. \nYou can write about anything you want to, but we recommend that you write about something that you are interested in. \nWe will also tell you the level of your text. \nHave fun!')
-model_level = pkl.load(open('level_prediction/models/svm.pkl', 'rb'))
+
+abs_path_prefix = os.path.dirname(os.path.abspath(__file__)) + '/'
+
+model_level = pkl.load(open(abs_path_prefix + 'level_prediction/models/svm.pkl', 'rb'))
 
 #create a box with text input where a user can enter a long form text
 text = st.text_area('Type here')
