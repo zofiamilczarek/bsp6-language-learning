@@ -25,7 +25,7 @@ contourpy==1.0.5
 cryptography==39.0.1
 cycler==0.11.0
 cymem==2.0.7
-dataclasses==0.8
+dataclasses==0.6
 datasets==2.12.0
 debugpy==1.5.1
 decorator==5.1.1
