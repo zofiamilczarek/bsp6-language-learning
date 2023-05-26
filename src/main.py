@@ -47,8 +47,9 @@ try:
     user_level = model_level.predict(vectorized_text)
     user_level = prep.decode_label(user_level[0])
     prediction_msg = 'The level of your text is: ' + str(user_level)
-except:
+except ValueError as e:
     prediction_msg = 'You entered empty text!'
+    print(e)
 
 
 if 'generate_text' not in st.session_state:
