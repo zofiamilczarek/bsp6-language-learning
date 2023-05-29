@@ -46,7 +46,8 @@ side_1, side_2 = st.sidebar.columns(2)
 
 lang_options = {
         "English":"en_US",
-        "Polski":"pl_PL"
+        "Polski":"pl_PL",
+        "Français":"fr_FR",
     }
 
 with side_2:
