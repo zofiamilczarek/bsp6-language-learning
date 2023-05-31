@@ -9,7 +9,8 @@ abs_path_prefix = os.path.dirname(os.path.abspath(__file__)) + '/'
 
 model = SentenceTransformer('distilbert-base-nli-mean-tokens')
 embeddings = pickle.load(open(abs_path_prefix + 'embeddings.pkl', 'rb'))
-texts = pd.read_csv(abs_path_prefix +'datasets/cefr_texts_labeled.csv')
+#texts = pd.read_csv(abs_path_prefix +'datasets/cefr_texts_labeled.csv')
+texts = pd.read_csv(abs_path_prefix +'datasets/from_pdfs.csv')
 
 def recommend_text(text, level, embeddings=embeddings, model=model, texts=texts):
     """
