@@ -64,6 +64,8 @@ model_level = pkl.load(open(abs_path_prefix + 'level_prediction/models/svm.pkl',
 #create a box with text input where a user can enter a long form text
 
 text = st.text_area(lang_dict['type_here'])
+nr_of_words = len(text.split()) 
+
 try:
     #get the level of the text
     vectorized_text = get_text_features(text,with_pos=False)
@@ -75,6 +77,8 @@ except ValueError as e:
     print(e)
 
 
+
+
 if 'generate_text' not in st.session_state:
     st.session_state.generate_text = False
 
@@ -84,7 +88,8 @@ def change_generation():
 if not st.session_state.generate_text:
     st.button(lang_dict['generate_text'],on_click=change_generation)
 
-if st.session_state.generate_text:    
+if st.session_state.generate_text:
+    st.markdown(lang_dict['nr_of_words'] + str(nr_of_words))    
     st.markdown(prediction_msg)
     regenerate_button = st.button(lang_dict['generate_another'])
     display_recommendation(lang_dict)
